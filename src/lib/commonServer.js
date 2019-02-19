@@ -10,9 +10,17 @@ const commonServer = {
     postTree: function (params) {
         // ...
     },
-    getImgList: function (params) {
-        var result = util.ajaxPromise({
+    getPersons: function (params) {
+        let result = util.ajaxPromise({
             type: 'GET',
+            url: site + '/Family/HelloServlet',
+            data: params || {}
+        });
+        return result;
+    },
+    addPerson: function (params) {
+        let result = util.ajaxPromise({
+            type: 'POST',
             url: site + '/Family/HelloServlet',
             data: params || {}
         });
